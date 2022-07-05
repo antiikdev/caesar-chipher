@@ -1,7 +1,7 @@
 # Caesar cipher
 
-Caesar cipher English alphabetic cryptography encrypton, decryption
-and encrypton breaking.
+Caesar cipher English alphabetic cryptography encryption, decryption
+and encryption breaking.
 
 **ToDo**
 - Break encrypted message by trying all English alphabet
