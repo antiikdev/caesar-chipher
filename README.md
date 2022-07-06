@@ -1,13 +1,12 @@
 # Caesar cipher
 
-Caesar cipher English alphabetic cryptography encryption, decryption
+Caesar cipher English alphabetic cryptography with encryption, decryption
 and encryption breaking.
 
 **ToDo**
+- Backend User Interface with user input text to en/decrypt
 - Break encrypted message by trying all English alphabet
 combinations
-- Backend User Interface: user can encode, decode or trying
-to break unknown encoding
 - Write tests
 
 
@@ -18,5 +17,5 @@ to break unknown encoding
 (ASCII binary characters)
 - When first English alphabet, go back to letter Z
 (ASCII binary characters)
-- Prints String of substitution cipher direction and count
+- Print String of substitution cipher direction and count
 - Encrypted text to CAPITAL letters
