@@ -1,3 +1,7 @@
+# Jar
+.jar
+
+# General
 .metadata
 bin/
 tmp/

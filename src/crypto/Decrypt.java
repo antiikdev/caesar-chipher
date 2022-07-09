@@ -17,7 +17,10 @@ public class Decrypt {
     private final int rotationAdd = 3;
     
     
-    private Decrypt() {
+    /**
+     * Initialize class
+     */
+    public Decrypt() {
         // Initialize class 
     }
     
@@ -25,8 +28,9 @@ public class Decrypt {
     /**
      * Adds a String text to the class
      * StringBuilder attribute
+     * @param t string message to be decrypted
      */
-    private Decrypt(String t) {
+    public Decrypt(String t) {
         text.append(t);
     }
     
@@ -35,7 +39,7 @@ public class Decrypt {
     /**
      * Caesar chipher forward counting encryption 
      */
-    private void decryption() {
+    public void decryption() {
         for (int i = 0; i < text.length(); i++) {
             char letter = this.text.charAt(i);
             
@@ -61,7 +65,7 @@ public class Decrypt {
     /**
      * Prints String of substitution cipher direction and count
      */
-    private void decryptionMethod() {
+    public void decryptionMethod() {
         System.out.print("Decrpytion completed with ");
         if ( this.rotationAdd > 0) {
             System.out.println("left shift of " + this.rotationAdd);
@@ -89,8 +93,8 @@ public class Decrypt {
         Decrypt secret = new Decrypt("vhfuhw");
         System.out.println("Crypted:  " + secret.toString());
         secret.decryption();
-        secret.decryptionMethod();
         System.out.println("Decrypted: " + secret.toString().toUpperCase());
+        secret.decryptionMethod();
     }
 
 }

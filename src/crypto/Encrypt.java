@@ -18,7 +18,10 @@ public class Encrypt {
     private final int rotationAdd = 3;
     
     
-    private Encrypt() {
+    /**
+     * Initialize class 
+     */
+    public Encrypt() {
         // Initialize class 
     }
     
@@ -26,8 +29,9 @@ public class Encrypt {
     /**
      * Adds a String text to the class
      * StringBuilder attribute
+     * @param t encrypted message string
      */
-    private Encrypt(String t) {
+    public Encrypt(String t) {
         text.append(t);
     }
     
@@ -35,7 +39,7 @@ public class Encrypt {
     /**
      * Caesar chipher forward counting encryption 
      */
-    private void encryption() {
+    public void encryption() {
         for (int i = 0; i < text.length(); i++) {
             char letter = this.text.charAt(i);
             
@@ -61,7 +65,7 @@ public class Encrypt {
     /**
      * Prints String of substitution cipher direction and count
      */
-    private void encryptionMethod() {
+    public void encryptionMethod() {
         System.out.print("Encrpytion completed with ");
         if ( this.rotationAdd > 0) {
             System.out.println("right shift of " + this.rotationAdd);
@@ -89,8 +93,8 @@ public class Encrypt {
         Encrypt writing = new Encrypt("secret");
         System.out.println("Original:  " + writing.toString());
         writing.encryption();
-        writing.encryptionMethod();
         System.out.println("Encrypted: " + writing.toString().toUpperCase());
+        writing.encryptionMethod();
     }
 
 

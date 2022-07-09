@@ -16,23 +16,47 @@ public class Controller {
     /**
      * Encrypt a user message
      */
-    public static void encrypt() {
-        return;
+    private static void encrypt() {
+        cls(); // clear screen
+        // User input
+        Scanner scn = new Scanner(System.in); 
+        System.out.print("Write a message to encrypt> ");
+        String message = scn.next();
+        
+        // Encryption
+        Encrypt encrypted = new Encrypt(message);
+        System.out.println("Original:  " + encrypted.toString());
+        encrypted.encryption();
+        System.out.println("Encrypted: " + encrypted.toString().toUpperCase());
+        encrypted.encryptionMethod();
+        pressEnterToContinue();
     }
     
     
     /**
      * Decrypt a user message
      */
-    public static void decrypt() {
-        return;
+    private static void decrypt() {
+        cls(); // clear screen
+        // User input
+        Scanner scn = new Scanner(System.in); 
+        System.out.print("Write a message to decrypt> ");
+        String message = scn.next();
+        
+        // Encryption
+        Decrypt encrypted = new Decrypt(message);
+        System.out.println("Original:  " + encrypted.toString());
+        encrypted.decryption();
+        System.out.println("Decrypted: " + encrypted.toString().toUpperCase());
+        encrypted.decryptionMethod();
+        pressEnterToContinue();
     }
     
     
     /**
      * Crack a Caesar chipser code
      */
-    public static void crack() {
+    private static void crack() {
         return;
     }
     
@@ -47,6 +71,34 @@ public class Controller {
         } catch (Exception ex) {
             System.out.println("Error:" + ex);
         }
+    }
+    
+    
+    /**
+     * Press Enter key to continue method
+     * Waits user to press Enter key before continuing.
+     * Source: Stackoverflow user E235
+     */
+    private static void pressEnterToContinue()
+    { 
+           System.out.println("Press Enter key to continue...");
+           try
+           {
+               System.in.read();
+           }  
+           catch(Exception e)
+           { 
+               // empty
+           }  
+    }
+    
+    /**
+     * About the program
+     */
+    private static void about() {
+        System.out.println("Caesar cipher English alphabetic cryptography with\r\n"
+                + " * encryption, decryption and encryption breaking.");
+        System.out.println("(c) Antiik.dev (MIT license)");
     }
 
     
@@ -67,19 +119,19 @@ public class Controller {
         System.out.println("1. Encrypt message");
         System.out.println("2. Decrypt message");
         System.out.println("3. Crack the encryption");
-        System.out.println("4. Exit ");
-        System.out.print("Selection >");
+        System.out.println("4. Setup caesar encryption rotation number");
+        System.out.println("5. About");
+        System.out.println("6. Exit ");
+        System.out.print("Selection > ");
         int selection = scan.nextInt();
         
         // Menu options selection:
         switch (selection) {
         case 1:  { // Encrypt
-            System.out.println("Function not yet available.");
             encrypt();
             break;
         }
         case 2:  { // Decrypt
-            System.out.println("Function not yet available.");
             decrypt();
             break;
         }
@@ -88,7 +140,15 @@ public class Controller {
             crack();
             break;
         }
-        case 4:  { // Exit menu
+        case 4:  { // Setup caesar encyption rotation number
+            // setup();
+            break;
+        }
+        case 5:  { // About
+            about();
+            break;
+        }
+        case 6:  { // Exit menu
             System.out.println("Thank you and bye!");
             return false;
         }
